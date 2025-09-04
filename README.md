@@ -2,11 +2,11 @@
 
 ## Introduction
 
-The Mixture of Agents (MoA) approach leverages multiple LLMs collectively to achieve state-of-the-art performance across diverse tasks. While traditional MoA implementations rely on fixed structures, NEAT-MoA dynamically evolves optimal agent configurations based on input characteristics through NeuroEvolution of Augmenting Topologies. **NEAT-MoA dramatically outperforms cutting-edge models like Claude Sonnet 4 on SWE-Bench, achieving 36.84% resolved rate versus 15.78%**, using only older, typically underperforming models
+The [Mixture of Agents (MoA)](https://github.com/togethercomputer/MoA) approach leverages multiple LLMs collectively to achieve state-of-the-art performance across diverse tasks. While traditional MoA implementations rely on fixed structures, NEAT-MoA dynamically evolves optimal agent configurations based on input characteristics through [NeuroEvolution of Augmenting Topologies (NEAT)](https://neat-python.readthedocs.io/en/latest/neat_overview.html). **NEAT-MoA dramatically outperforms cutting-edge models like Claude Sonnet 4 on SWE-Bench, achieving 36.84% resolved rate versus 15.78%**, using only older, underperforming models.
 
 ## Framework Architecture
 
-NEAT-MoA combines an evolved NEAT feedforward neural network with standard MoA components (N proposer LLMs per layer and an aggregator LLM). For each input prompt, the NEAT network dynamically predicts the optimal reference models to use within the MoA structure, allowing the system to adapt its configuration in real-time. This architecture, as shown in Figure 1, enables efficient model selection tailored to specific inputs, maximizing performance while optimizing computational resources.
+NEAT-MoA combines an evolved NEAT feedforward neural network with standard MoA components (N proposer LLMs per layer and an aggregator LLM). For each input prompt, the NEAT network dynamically predicts the optimal proposer models to use within the MoA structure, allowing the system to adapt its configuration in real-time. This architecture, as shown in Figure 1, enables efficient model selection tailored to specific inputs, maximizing performance while optimizing computational resources.
 
 <figure>
   <img src="https://raw.githubusercontent.com/dora2928/NEAT-MoA/refs/heads/main/neat-more.gif" alt="NEAT-MoA explained" style="width:75%">
