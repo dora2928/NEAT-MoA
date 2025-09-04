@@ -27,7 +27,7 @@ Our fitness function balances solution effectiveness (80%), completion ratio (10
 
 ## Evaluation Approach
 
-We evaluate NEAT-MoA using two primary metrics: resolved rate (percentage of successfully solved instances) and average API cost per instance in dollars. System-level assessment focuses on optimizing NEAT hyperparameters, including generations, population size, and mutation rates to identify the most effective network configuration. Our comparative baseline is the mini-swe-agent framework powered by a single state-of-the-art LLM (Claude Sonnet 4, Gemini 2.5 Pro etc), against which we test our NEAT-MoA combining only older, typically underperforming models ("llama-3-1-405b", "mistral-large-2", "vertex-claude-v35-sonnet", and "gemini-v25-flash") with "vertex-claude-v37-sonnet" as the aggregator. 
+We evaluate NEAT-MoA using two primary metrics: resolved rate (percentage of successfully solved instances) and average API cost per instance in dollars. System-level assessment focuses on optimizing NEAT hyperparameters, including generations, population size, and mutation rates to identify the most effective network configuration. Our comparative baseline is the mini-swe-agent framework powered by a single state-of-the-art LLM (Claude Sonnet 4, Gemini 2.5 Pro etc), against which we test our NEAT-MoA combining only older, typically underperforming models (`llama-3-1-405b`, `mistral-large-2`, `vertex-claude-v35-sonnet`, and `gemini-v25-flash`) with `vertex-claude-v37-sonnet` as the aggregator. 
 
 
 ### Results
@@ -43,7 +43,7 @@ We evaluate NEAT-MoA using two primary metrics: resolved rate (percentage of suc
 |Claude Sonnet 3.7|14.28%|$0.91
 |Llama-3-1-405b	|4.76%|$0.34
 
-We achieved 3rd position on a subset of SWE-bench instances. However, while we outperform older underperforming models (`llama-3-1-405b`, `mistral-large-2`, `vertex-claude-v35-sonnet` etc), they, as proposer options, also degrade the performance of one performant proposer (`Gemini-v25-Flash`). Gemini models likely excel in this domain because they handle long contexts effectively—a crucial capability as conversation history expands with the increasing steps required to solve complex SWE-bench tasks. For this dataset in particular, future iterations should prioritize proposer options that can reasonably handle extended contexts to maintain performance throughout the problem-solving process.
+We achieved 3rd position on a subset of SWE-bench instances. However, while we outperform older models (`llama-3-1-405b`, `mistral-large-2`, `vertex-claude-v35-sonnet` etc), they, as proposer options, also degrade the performance of one performant proposer (`Gemini-v25-Flash`). Gemini models likely excel in this domain because they handle long contexts effectively—a crucial capability as conversation history expands with the increasing steps required to solve complex SWE-bench tasks. For this dataset in particular, future iterations should prioritize proposer options that can reasonably handle extended contexts to maintain performance throughout the problem-solving process.
 
 For the optimal NEAT hyperparameters, we observed that genomes tend to overfit, as the number of generations increases. For this dataset, we minimally tuned NEAT-MoA with population size of 5 on 3 generations, which seems to be reasonable in this small size experiment. We used the best genome from the 3rd generation, which achieved the highest fitness score.
 
