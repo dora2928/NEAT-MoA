@@ -9,7 +9,7 @@ The [Mixture of Agents (MoA)](https://github.com/togethercomputer/MoA) approach 
 NEAT-MoA combines an evolved NEAT feedforward neural network with standard MoA components (N proposer LLMs per layer and an aggregator LLM). For each input prompt, the NEAT network dynamically predicts the optimal proposer models to use within the MoA structure, allowing the system to adapt its configuration in real-time. This architecture, as shown in Figure 1, enables efficient model selection tailored to specific inputs, maximizing performance while optimizing computational resources.
 
 <figure>
-  <img src="https://raw.githubusercontent.com/dora2928/NEAT-MoA/refs/heads/main/neat-more.gif" alt="NEAT-MoA explained" style="width:75%">
+  <img src="https://raw.githubusercontent.com/dora2928/NEAT-MoA/refs/heads/main/neat-more2.gif" alt="NEAT-MoA explained" style="width:75%">
   <figcaption>Figure 1. NEAT-MoA architecture. The trained NEAT network predicts the LLM combination of MoA given a prompt of chat history. </figcaption>
 </figure>
 
