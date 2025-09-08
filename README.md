@@ -35,15 +35,18 @@ We evaluate NEAT-MoA using two primary metrics: resolved rate (percentage of suc
 | Method |Resolved|Average Cost
 |--------|--|---
 |Gemini-v25-Pro|66.66%|$0.16
+|GPT-o4-mini	|52.38%|$0.09
 |Gemini-v25-Flash|47.61%|$0.02
 |NEAT-MoA	|36.84%|$0.48
+|GPT-o3-mini	|28.57%|$0.12
+|GPT-41-mini	|19.04%|$0.16
 |Claude Sonnet 3.5|19.04%|$0.24
 |Mistral Large 2	|16.66%|$1.23
 |Claude Sonnet 4|14.28%|$0.27
 |Claude Sonnet 3.7|14.28%|$0.91
 |Llama-3-1-405b	|4.76%|$0.34
 
-We achieved 3rd position on a subset of SWE-bench instances. However, while we outperform older models (`llama-3-1-405b`, `mistral-large-2`, `vertex-claude-v35-sonnet` etc), they, as proposer options, also degrade the performance of one performant proposer (`Gemini-v25-Flash`). Gemini models likely excel in this domain because they handle long contexts effectively—a crucial capability as conversation history expands with the increasing steps required to solve complex SWE-bench tasks. For this dataset in particular, future iterations should prioritize proposer options that can reasonably handle extended contexts to maintain performance throughout the problem-solving process.
+We achieved 4th position on a subset of SWE-bench instances. However, while we outperform older models (`llama-3-1-405b`, `mistral-large-2`, `vertex-claude-v35-sonnet` etc), they, as proposer options, also degrade the performance of one performant proposer (`Gemini-v25-Flash`). Gemini models likely excel in this domain because they handle long contexts effectively—a crucial capability as conversation history expands with the increasing steps required to solve complex SWE-bench tasks. For this dataset in particular, future iterations should prioritize proposer options that can reasonably handle extended contexts to maintain performance throughout the problem-solving process.
 
 For the optimal NEAT hyperparameters, we observed that genomes tend to overfit, as the number of generations increases. For this dataset, we minimally tuned NEAT-MoA with population size of 5 on 3 generations, which seems to be reasonable in this small size experiment. We used the best genome from the 3rd generation, which achieved the highest fitness score.
 
