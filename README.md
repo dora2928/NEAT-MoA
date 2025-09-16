@@ -35,6 +35,7 @@ We evaluate NEAT-MoA using two primary metrics: resolved rate (percentage of suc
 | Method |Resolved|Average Cost
 |--------|--|---
 |Gemini-v25-Pro|66.66%|$0.16
+|NEAT-MoA2	|57.14%|$0.05
 |GPT-o4-mini	|52.38%|$0.09
 |Gemini-v25-Flash|47.61%|$0.02
 |NEAT-MoA	|36.84%|$0.48
